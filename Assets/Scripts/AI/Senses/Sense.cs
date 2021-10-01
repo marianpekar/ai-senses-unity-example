@@ -17,12 +17,12 @@ public class Sense : MonoBehaviour
     public Color DebugDrawColor = Color.green;
 #endif
 
-    protected void Detect(Detectable detectable) 
+    private void Detect(Detectable detectable) 
     {
         IsSensing = true;
         OnDetect?.Invoke(detectable);
     }
-    protected void Lost(Detectable detectable)
+    private void Lost(Detectable detectable)
     {
         IsSensing = false;
         OnLost?.Invoke(detectable); 
