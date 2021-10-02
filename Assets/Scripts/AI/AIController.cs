@@ -26,13 +26,15 @@ public class AIController : MonoBehaviour
     private NavMeshAgent agent;
     public float RemainingDistance { get => agent.remainingDistance; }
     public float StoppingDistance { get => agent.stoppingDistance; }
+    public void SetDestination(Vector3 destination) => agent.SetDestination(destination);
 
     private float defaultAgentSpeed;
-
-    public void SetDestination(Vector3 destination) => agent.SetDestination(destination);
+    public void MultiplySpeed(float factor) => agent.speed = defaultAgentSpeed * factor;
+    public void SetDefaultSpeed() => agent.speed = defaultAgentSpeed;
 
     private Eyes eyes;
     private Ears ears;
+    public void IgnoreEars(bool ignore) => ears.gameObject.SetActive(!ignore);
 
     void Start()
     {
@@ -73,20 +75,5 @@ public class AIController : MonoBehaviour
     {
         ChaseBehavior.Target = detectable.transform;
         CurrentBehavior = ChaseBehavior;
-    }
-
-    public void IgnoreEars(bool ignore) 
-    {
-        ears.gameObject.SetActive(!ignore);
-    }
-
-    public void MultiplySpeed(float factor)
-    {
-        agent.speed = defaultAgentSpeed * factor;
-    }    
-    
-    public void SetDefaultSpeed()
-    {
-        agent.speed = defaultAgentSpeed;
     }
 }
