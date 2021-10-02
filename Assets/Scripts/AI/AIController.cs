@@ -27,6 +27,8 @@ public class AIController : MonoBehaviour
     public float RemainingDistance { get => agent.remainingDistance; }
     public float StoppingDistance { get => agent.stoppingDistance; }
 
+    private float defaultAgentSpeed;
+
     public void SetDestination(Vector3 destination) => agent.SetDestination(destination);
 
     private Eyes eyes;
@@ -35,6 +37,7 @@ public class AIController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        defaultAgentSpeed = agent.speed;
 
         PatrolBehavior = GetComponent<Patrol>();
         InvestigateBehavior = GetComponent<Investigate>();
@@ -75,5 +78,15 @@ public class AIController : MonoBehaviour
     public void IgnoreEars(bool ignore) 
     {
         ears.gameObject.SetActive(!ignore);
+    }
+
+    public void MultiplySpeed(float factor)
+    {
+        agent.speed = defaultAgentSpeed * factor;
+    }    
+    
+    public void SetDefaultSpeed()
+    {
+        agent.speed = defaultAgentSpeed;
     }
 }

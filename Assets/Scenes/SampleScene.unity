@@ -1540,6 +1540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {x: 0, y: 0, z: 0}
   InvestigateForSeconds: 3
+  AgentSpeedMultiplier: 1.5
 --- !u!114 &1739793916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  AgentSpeedMultiplier: 2
 --- !u!1 &1885916064
 GameObject:
   m_ObjectHideFlags: 0

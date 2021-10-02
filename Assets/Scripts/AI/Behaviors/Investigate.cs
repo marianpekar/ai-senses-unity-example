@@ -4,12 +4,14 @@ public class Investigate : Behaviour
 {
     public Vector3 Destination;
     public int InvestigateForSeconds = 3;
+    public float AgentSpeedMultiplier = 1.5f;
 
     private bool isInvestigating;
     private float investigationStartTime;
 
     public override void OnActivate(AIController controller)
     {
+        controller.MultiplySpeed(AgentSpeedMultiplier);
         controller.SetDestination(Destination);
     }
 

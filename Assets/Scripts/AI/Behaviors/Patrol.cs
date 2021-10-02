@@ -7,6 +7,7 @@ public class Patrol : Behaviour
 
     public override void OnActivate(AIController controller)
     {
+        controller.SetDefaultSpeed();
         controller.SetDestination(PatrolPoints[currentPPIndex].position);    
     }
 

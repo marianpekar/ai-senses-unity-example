@@ -3,9 +3,11 @@ using UnityEngine;
 public class Chase : Behaviour
 {
     public Transform Target;
+    public float AgentSpeedMultiplier = 2f;
 
     public override void OnActivate(AIController controller)
     {
+        controller.MultiplySpeed(AgentSpeedMultiplier);
         controller.IgnoreEars(true);
     }
 
