@@ -7,8 +7,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Chase))]
 public class AIController : MonoBehaviour
 {
-    private Behaviour currentBehavior;
-    public Behaviour CurrentBehavior
+    private AIBehaviour currentBehavior;
+    public AIBehaviour CurrentBehavior
     {
         get => currentBehavior;
         private set

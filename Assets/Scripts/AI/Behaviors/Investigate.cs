@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Investigate : Behaviour
+public class Investigate : AIBehaviour
 {
     public Vector3 Destination;
     public int InvestigateForSeconds = 3;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Chase : Behaviour
+public class Chase : AIBehaviour
 {
     public Transform Target;
     public float AgentSpeedMultiplier = 2f;

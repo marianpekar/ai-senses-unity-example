@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Patrol : Behaviour
+public class Patrol : AIBehaviour
 {
     public Transform[] PatrolPoints;
     private int currentPPIndex;
