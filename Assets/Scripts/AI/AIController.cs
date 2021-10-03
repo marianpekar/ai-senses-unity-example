@@ -11,7 +11,7 @@ public class AIController : MonoBehaviour
     public Behaviour CurrentBehavior
     {
         get => currentBehavior;
-        set
+        private set
         {
             currentBehavior?.OnDeactivate(this);
             value.OnActivate(this);
@@ -19,9 +19,9 @@ public class AIController : MonoBehaviour
         }
     }
 
-    public Patrol PatrolBehavior;
-    public Investigate InvestigateBehavior;
-    public Chase ChaseBehavior;
+    private Patrol PatrolBehavior;
+    private Investigate InvestigateBehavior;
+    private Chase ChaseBehavior;
 
     private NavMeshAgent agent;
     public float RemainingDistance { get => agent.remainingDistance; }
