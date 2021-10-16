@@ -11,6 +11,7 @@ public class Investigate : AIBehaviour
 
     public override void OnActivate(AIController controller)
     {
+        isInvestigating = false;
         controller.MultiplySpeed(AgentSpeedMultiplier);
         controller.SetDestination(Destination);
     }
