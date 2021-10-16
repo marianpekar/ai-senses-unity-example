@@ -9,13 +9,13 @@ public class Investigate : AIBehaviour
     private bool isInvestigating;
     private float investigationStartTime;
 
-    public override void OnActivate(AIController controller)
+    public override void Activate(AIController controller)
     {
         controller.MultiplySpeed(AgentSpeedMultiplier);
         controller.SetDestination(Destination);
     }
 
-    public override void OnUpdate(AIController controller)
+    public override void UpdateStep(AIController controller)
     {
         if (controller.RemainingDistance <= controller.StoppingDistance && !isInvestigating)
         {
@@ -30,7 +30,7 @@ public class Investigate : AIBehaviour
         }
     }
 
-    public override void OnDeactivate(AIController aIController)
+    public override void Deactivate(AIController aIController)
     {
         isInvestigating = false;
     }

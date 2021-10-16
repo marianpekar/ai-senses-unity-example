@@ -13,8 +13,8 @@ public class AIController : MonoBehaviour
         get => currentBehavior;
         private set
         {
-            currentBehavior?.OnDeactivate(this);
-            value.OnActivate(this);
+            currentBehavior?.Deactivate(this);
+            value.Activate(this);
             currentBehavior = value;
         }
     }
@@ -57,7 +57,7 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
-        CurrentBehavior.OnUpdate(this);
+        CurrentBehavior.UpdateStep(this);
     }
 
     public void Patrol()
