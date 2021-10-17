@@ -46,11 +46,11 @@ public class AIController : MonoBehaviour
         ChaseBehavior = GetComponent<Chase>();
 
         eyes = GetComponentInChildren<Eyes>();
-        eyes.OnDetect.AddListener(Chase);
-        eyes.OnLost.AddListener(Investigate);
+        eyes.OnDetect += Chase;
+        eyes.OnLost += Investigate;
 
         ears = GetComponentInChildren<Ears>();
-        ears.OnDetect.AddListener(Investigate);
+        ears.OnDetect += Investigate;
 
         Patrol();
     }

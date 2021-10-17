@@ -10,8 +10,8 @@ public class Sense : MonoBehaviour
 
     public bool IsDetectionContinuous = true;
 
-    public UnityEvent<Detectable> OnDetect;
-    public UnityEvent<Detectable> OnLost;
+    public UnityAction<Detectable> OnDetect;
+    public UnityAction<Detectable> OnLost;
 
 #if UNITY_EDITOR
     public Color DebugDrawColor = Color.green;
