@@ -25,10 +25,8 @@ public class Eyes : Sense
     private bool IsInVisibleArea(Detectable detectable)
     {
         float distance = Vector3.Distance(detectable.transform.position, this.transform.position);
-        Vector3 direction = Direction(detectable.transform.position, this.transform.position);
-        float dot = Vector3.Dot(direction, this.transform.forward);
 
-        return distance <= Distance && dot >= FieldOfViewDot;
+        return distance <= Distance && Vector3.Dot(Direction(detectable.transform.position, this.transform.position), this.transform.forward) >= FieldOfViewDot;
     }
 
     private Vector3 Direction(Vector3 from, Vector3 to) 
